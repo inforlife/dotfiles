@@ -1,34 +1,35 @@
----
-# We don't need a comment on each object
-IrresponsibleModule:
-  enabled: false
-
-# Making Reek "Rails"-friendly
-"app/controllers":
-  NestedIterators:
-    max_allowed_nesting: 2
-  UnusedPrivateMethod:
-    enabled: false
-  InstanceVariableAssumption:
-    enabled: false
-"app/helpers":
-  UtilityFunction:
-    enabled: false
-"app/jobs":
-  UtilityFunction:
-    enabled: false
-"app/use_cases":
-  UtilityFunction:
-    enabled: false
-"app/presenters":
-  UtilityFunction:
-    enabled: false
-"app/decorators":
-  UtilityFunction:
+detectors:
+  # We don't need a comment on each object
+  IrresponsibleModule:
     enabled: false
 
-# Directories below will not be scanned at all
+directories:
+  # Making Reek "Rails"-friendly
+  "app/controllers":
+    NestedIterators:
+      max_allowed_nesting: 2
+    UnusedPrivateMethod:
+      enabled: false
+    InstanceVariableAssumption:
+      enabled: false
+  "app/helpers":
+    UtilityFunction:
+      enabled: false
+  "app/jobs":
+    UtilityFunction:
+      enabled: false
+  "app/use_cases":
+    UtilityFunction:
+      enabled: false
+  "app/presenters":
+    UtilityFunction:
+      enabled: false
+  "app/decorators":
+    UtilityFunction:
+      enabled: false
+
 exclude_paths:
+ # Not-scanned directories
   - db/
   - vendor/
   - docs/
