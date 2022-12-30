@@ -1,0 +1,27 @@
+version: 2
+
+registries:
+  rubygems-github: # Define access for a private registry 
+    type: rubygems-server
+    url: rubygems.pkg.github.com/inforlife
+    username: inforlife
+    password: ${{secrets.RR_PAT}}
+    
+updates:
+  - package-ecosystem: "bundler"
+    directory: "/"
+    registries:
+      - rubygems-github
+    schedule: 
+      interval: "daily" # Run on every weekday, Monday to Friday.
+    assignees:
+      - sigfrid
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule: 
+      interval: "daily"
+    assignees:
+      - sigfrid
+    
+    
+    
