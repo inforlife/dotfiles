@@ -72,10 +72,6 @@ Lint/EndAlignment:
   Description: 'Align ends correctly.'
   Enabled: true
 
-Style/EndBlock:
-  Description: 'END blocks should not be placed inside method definitions.'
-  Enabled: true
-
 Lint/EnsureReturn:
   Description: 'Do not use return in an ensure block.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-return-ensure'
@@ -254,62 +250,6 @@ Metrics/PerceivedComplexity:
   Description: >-
                  A complexity metric geared towards measuring complexity for a
                  human reader.
-  Enabled: true
-
-##################### Performance #############################
-
-Performance/Count:
-  Description: >-
-                  Use `count` instead of `select...size`, `reject...size`,
-                  `select...count`, `reject...count`, `select...length`,
-                  and `reject...length`.
-  Enabled: true
-
-Performance/Detect:
-  Description: >-
-                  Use `detect` instead of `select.first`, `find_all.first`,
-                  `select.last`, and `find_all.last`.
-  Reference: 'https://github.com/JuanitoFatas/fast-ruby#enumerabledetect-vs-enumerableselectfirst-code'
-  Enabled: true
-
-Performance/FlatMap:
-  Description: >-
-                  Use `Enumerable#flat_map`
-                  instead of `Enumerable#map...Array#flatten(1)`
-                  or `Enumberable#collect..Array#flatten(1)`
-  Reference: 'https://github.com/JuanitoFatas/fast-ruby#enumerablemaparrayflatten-vs-enumerableflat_map-code'
-  Enabled: true
-  EnabledForFlattenWithoutParams: false
-  # If enabled, this cop will warn about usages of
-  # `flatten` being called without any parameters.
-  # This can be dangerous since `flat_map` will only flatten 1 level, and
-  # `flatten` without any parameters can flatten multiple levels.
-
-Performance/ReverseEach:
-  Description: 'Use `reverse_each` instead of `reverse.each`.'
-  Reference: 'https://github.com/JuanitoFatas/fast-ruby#enumerablereverseeach-vs-enumerablereverse_each-code'
-  Enabled: true
-
-Style/Sample:
-  Description: >-
-                  Use `sample` instead of `shuffle.first`,
-                  `shuffle.last`, and `shuffle[Fixnum]`.
-  Reference: 'https://github.com/JuanitoFatas/fast-ruby#arrayshufflefirst-vs-arraysample-code'
-  Enabled: true
-
-Performance/Size:
-  Description: >-
-                  Use `size` instead of `count` for counting
-                  the number of elements in `Array` and `Hash`.
-  Reference: 'https://github.com/JuanitoFatas/fast-ruby#arraycount-vs-arraysize-code'
-  Enabled: true
-
-Performance/StringReplacement:
-  Description: >-
-                  Use `tr` instead of `gsub` when you are replacing the same
-                  number of characters. Use `delete` instead of `gsub` when
-                  you are deleting characters.
-  Reference: 'https://github.com/JuanitoFatas/fast-ruby#stringgsub-vs-stringtr-code'
   Enabled: true
 
 ################## Style #################################
